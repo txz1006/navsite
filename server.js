@@ -63,15 +63,13 @@ async function getTenantAccessToken() {
 // 获取多维表格数据
 async function getBitableData(token) {
   try {
-    const response = await axios.get(
-      `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.APP_TOKEN}/tables/${process.env.TABLE_ID}/records/search`,
+    const response = await axios.post(
+      `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.APP_TOKEN}/tables/${process.env.TABLE_ID}/records/search?page_size=100`,
+      {},
       {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json; charset=utf-8'
-        },
-        params: {
-          page_size: 100 // 获取更多数据
         }
       }
     );
