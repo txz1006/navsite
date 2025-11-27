@@ -64,7 +64,7 @@ async function getTenantAccessToken() {
 async function getBitableData(token) {
   try {
     const response = await axios.get(
-      `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.APP_TOKEN}/tables/${process.env.TABLE_ID}/records`,
+      `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.APP_TOKEN}/tables/${process.env.TABLE_ID}/records/search`,
       {
         headers: {
           'Authorization': `Bearer ${token}`,
