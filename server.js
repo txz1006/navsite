@@ -189,6 +189,7 @@ app.get('/api/navigation', async (req, res) => {
       categories = Object.keys(data);
     } catch (apiError) {
       console.log('无法从飞书API获取数据，使用模拟数据:', apiError.message);
+      console.log('无法从飞书API获取数据，error:', JSON.stringify(apiError));
       // 使用模拟数据
       data = mockData;
       categories = Object.keys(mockData);
