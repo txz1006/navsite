@@ -120,7 +120,7 @@ function processTableData(items) {
     }
     return {
       id: item.record_id, // 添加记录ID
-      name: fields.name || fields.站点名称 || '',
+      name: fields.name?.[0]?.text || fields.站点名称?.[0]?.text || '',
       url: fields.url || fields.网址.link || '',
       category: fields.category || fields.分类 || '其它',
       sort: fields.sort || fields.排序 || 0,
